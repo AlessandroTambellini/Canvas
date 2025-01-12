@@ -1,0 +1,3 @@
+- add github, license and donate icons at the bottom of the document. 
+In a way integrated with the background.
+- make the paddings, radiuses and distances more dynamic using variables and making them dependent on each other
