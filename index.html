@@ -6,151 +6,468 @@
     <title>Document</title>
 
     <script src="./index.js" defer></script>
+    <!-- <script src="./index.js" defer></script> -->
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <!-- directly inserting the grid squares in the html file
-     is way faster than dynamically adding them via JS -->
-    <div id="grid">
-        <div class="row">
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
+        <!-- directly inserting the grid squares in the html file
+        is way faster than dynamically adding them via JS -->
+        <div id="grid">
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
+            <div class="row">
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+                <span class="cell"></span>
+            </div>
         </div>
-        <div class="row">
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-        </div>
-        <div class="row">
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-        </div>
-        <div class="row">
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-        </div>
-        <div class="row">
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-        </div>
-        <div class="row">
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-        </div>
-        <div class="row">
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-        </div>
-        <div class="row">
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-        </div>
-        <div class="row">
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-        </div>
-        <div class="row">
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-            <span class="cell"></span>
-        </div>
-    </div>
-    <nav id="palette">
-        <button id="red-btn">
-            <img src="./public/red-pencil.svg" alt="red pencil"
-                onerror="this.src='./public/red-pencil.png'">
-        </button>
-        <button id="green-btn">
-            <img src="./public/green-pencil.svg" alt="green pencil"
-                onerror="this.src='./public/green-pencil.png'">
-        </button>
-        <button id="blue-btn">
-            <img src="./public/blue-pencil.svg" alt="blue pencil"
-                onerror="this.src='./public/blue-pencil.png'">
-        </button>
-        |
-        <button id="rubber-btn">
-            <img src="./public/rubber.svg" alt="rubber"
-                onerror="this.src='./public/rubber.png'">
-        </button>
-    </nav>
+
+        <nav id="palette">
+            <div class="marker-container">
+                <div id="r" class="marker"></div>
+            </div>
+            <div class="marker-container">
+                <div id="g" class="marker"></div>
+            </div>
+            <div class="marker-container">
+                <div id="b" class="marker"></div>
+            </div>
+            <div class="marker-container">
+                <div id="u" class="marker"></div>
+            </div>
+        </nav>
 </body>
 </html>

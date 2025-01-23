@@ -1,58 +1,145 @@
+:root {
+    --grid-clr: rgb(52, 52, 56);
+    /* --cell-size: 4vw; */
+    /* --cell-max-size: 40px;
+    --cell-min-size: 12px; */
+
+    --cell-size: clamp(12px, min(3.25vw, 3.25vh), 40px); /* there is 
+    a reason on why I put a limit on 40px. */
+}
+
+body {
+    background-color: var(--grid-clr);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* border: 3px solid rgb(155, 242, 42); */
+}
+
 #grid {
-    border: 2px solid rgb(76, 64, 64);
-    width: fit-content;
-    padding: 4rem;
-    margin-inline: auto;
+    background-color: var(--grid-clr);
+    margin: calc(3 * var(--cell-size));
+    border: 1px solid violet;
 }
 
 .row {
     display: flex;
-    flex-shrink: none;
+    flex-shrink: none; /* the cell has a min size so, do i even need to disable the flex-shrink? */
 }
 
 .cell {
-    width: 5ch;
+    width: var(--cell-size);
+    /* max-width: var(--cell-size);
+    min-width: 12px; */
     aspect-ratio: 1;
-    border: 1px solid rgb(103, 101, 101);
-}
-
-.red {
-    background-color: rgb(255, 0, 0);
-}
-.green {
-    background-color: rgb(0, 255, 0);
-}
-.blue {
-    background-color: rgb(0, 0, 255);
-}
-.white {
-    background-color: rgb(255, 255, 255);
+    box-shadow: inset 0 0 1px white;
 }
 
 #palette {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(161, 159, 159);
-    gap: .5rem;
-    padding: .5rem;
-    width: fit-content;
-    margin-inline: auto;
-    border-radius: calc(2.5rem + 2px);
-    margin-block: .25rem;
+    gap: 1rem;
+    border: 1px solid red;
 }
 
-#palette img {
-    width: 4rem;
+.marker-container {
+    width: calc(3 * var(--cell-size));
+    /* max-width: calc(3 * var(--cell-size)); */
     aspect-ratio: 1;
-}
-
-#palette > button {
-    border-radius: 100%;
-    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid rgb(110, 109, 109);
-    cursor: pointer;
+    background-color: rgb(223, 223, 223);
+}
+
+.marker-container-hover {
+    box-shadow: inset 0 0 5px black;
+}
+
+.marker {
+    cursor: move;
+    width: calc(2 * var(--cell-size));
+    /* max-width: calc(2 * var(--cell-size)); */
+    aspect-ratio: 1;
+    z-index: 1;
+    box-shadow: 0 0 2px black;
+    position: absolute;
+}
+
+.marker-container:nth-child(3) .marker,
+.marker-container:nth-child(4) .marker {
+    box-shadow: 0 0 2px white;
+}
+
+#r {
+    background-color: rgb(255, 0, 0);
+}
+#g {
+    background-color: rgb(0, 255, 0);
+}
+#b {
+    background-color: rgb(0, 0, 255);
+}
+#u {
+    background-color: var(--grid-clr);
+}
+
+.r-- {
+    background-color: rgb(255, 0, 0);
+}
+.-g- {
+    background-color: rgb(0, 255, 0);
+}
+.--b {
+    background-color: rgb(0, 0, 255);
+}
+.rg- {
+    background-color: rgb(255, 255, 0);
+}
+.r-b {
+    background-color: rgb(255, 0, 255);
+}
+.-gb {
+    background-color: rgb(0, 255, 255);
+}
+.rgb {
+    background-color: rgb(255, 255, 255);
+}
+
+/* @media (min-width: 1300px) {
+    body {
+        flex-direction: row;
+    }
+
+    #grid {
+    }
+
+    #palette {
+        flex-direction: column;
+    }
+} */
+
+/* vertical screen */
+@media (max-aspect-ratio: 1/1) {
+    body {
+        flex-direction: column;
+    }
+
+    #palette {
+        flex-direction: row;
+    }
+}
+
+/* horizontal screen */
+@media (min-aspect-ratio: 1/1) {
+    body {
+        flex-direction: row;
+    }
+
+    #palette {
+        flex-direction: column;
+    }
 }
