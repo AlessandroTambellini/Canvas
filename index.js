@@ -1,7 +1,8 @@
 const grid = document.querySelector('#grid');
 
-let prev_mouse_x = 0;
-let prev_mouse_y = 0;
+/* cursor stands for both the mouse and the finger */
+let prev_cursor_x = 0;
+let prev_cursor_y = 0;
 
 let active_marker = null;
 let active_marker_container = null;
@@ -23,16 +24,18 @@ document.querySelectorAll('.marker').forEach(marker => {
     });
 });
 
-function select_marker(e, marker) {
-    if (e.button === 0) {
-        active_marker = marker;
-        active_marker_container = marker.parentNode;
-        active_marker_container_rect = active_marker_container.getBoundingClientRect();
-        prev_mouse_x = e.clientX;
-        prev_mouse_y = e.clientY;
-        active_marker.style.zIndex = 2; /* To be above the other
-        markers if hovered. */
+function select_marker(e, marker) 
+{
+    if (e.type === 'mousedown' && e.button !== 0) {
+        return;
     }
+    active_marker = marker;
+    active_marker_container = marker.parentNode;
+    active_marker_container_rect = active_marker_container.getBoundingClientRect();
+    prev_cursor_x = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+    prev_cursor_y = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+    active_marker.style.zIndex = 2; /* To be above the other
+    markers if hovered. */
 }
 
 document.addEventListener('mouseup', e => {
@@ -42,8 +45,12 @@ document.addEventListener('touchend', e => {
     lay_marker(e);
 });
 
-function lay_marker(e) {
-    if (e.button === 0 && active_marker) 
+function lay_marker(e) 
+{
+    if (e.type === 'mouseup' && e.button !== 0) {
+        return;
+    }
+    if (active_marker) 
     {
         const active_marker_left = Number(window.getComputedStyle(active_marker).left.split('px')[0]);
         const active_marker_top = Number(window.getComputedStyle(active_marker).top.split('px')[0]);
@@ -74,13 +81,16 @@ function move_marker(e) {
         const active_marker_left = Number(window.getComputedStyle(active_marker).left.split('px')[0]);
         const active_marker_top = Number(window.getComputedStyle(active_marker).top.split('px')[0]);
         
+        const cursor_x = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+        const cursor_y = e.type.includes('touch') ? e.touches[0].clientY : e.clientY;
+
         let left = 0;
         if (active_marker_left < 0) {
             left = 0;
         } else if (document.body.offsetWidth - (active_marker_left + active_marker.offsetWidth) < 0) {
             left = document.body.offsetWidth - active_marker.offsetWidth;
         } else {
-            left = active_marker_left + (e.clientX - prev_mouse_x);
+            left = active_marker_left + (cursor_x - prev_cursor_x);
         }
         
         let top = 0;
@@ -89,13 +99,13 @@ function move_marker(e) {
         } else if (document.body.offsetHeight - (active_marker_top + active_marker.offsetHeight) < 0) {
             top = document.body.offsetHeight - active_marker.offsetHeight;
         } else {
-            top = active_marker_top + (e.clientY - prev_mouse_y);
+            top = active_marker_top + (cursor_y - prev_cursor_y);
         }
 
         active_marker.style.left = `${left}px`;
         active_marker.style.top = `${top}px`;
-        prev_mouse_x = e.clientX;
-        prev_mouse_y = e.clientY;
+        prev_cursor_x = cursor_x;
+        prev_cursor_y = cursor_y;
 
         /* active_marker touches its container */
         if (active_marker_top + active_marker.offsetHeight > active_marker_container_rect.top &&

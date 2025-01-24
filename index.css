@@ -1,11 +1,8 @@
 :root {
     --grid-clr: rgb(52, 52, 56);
-    /* --cell-size: 4vw; */
-    /* --cell-max-size: 40px;
-    --cell-min-size: 12px; */
-
-    --cell-size: clamp(12px, min(3.25vw, 3.25vh), 40px); /* there is 
-    a reason on why I put a limit on 40px. */
+    --cell-size: clamp(12px, min(3.25vw, 3.25vh), 40px); /* I put a limit to 40px
+    because, after a certain size of the grid, the border of the cells 
+    (that is actually a box shadow) is no more clearly distinguishable. */
 }
 
 body {
@@ -13,28 +10,23 @@ body {
     height: 100vh;
     margin: 0;
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    /* border: 3px solid rgb(155, 242, 42); */
 }
 
 #grid {
     background-color: var(--grid-clr);
-    margin: calc(3 * var(--cell-size));
-    border: 1px solid violet;
+    margin: calc(3 * var(--cell-size)); /* I put this margin
+    because I want to give the user enough space to leave a marker on a side. */
 }
 
 .row {
     display: flex;
-    flex-shrink: none; /* the cell has a min size so, do i even need to disable the flex-shrink? */
 }
 
 .cell {
     width: var(--cell-size);
-    /* max-width: var(--cell-size);
-    min-width: 12px; */
     aspect-ratio: 1;
     box-shadow: inset 0 0 1px white;
 }
@@ -42,12 +34,10 @@ body {
 #palette {
     display: flex;
     gap: 1rem;
-    border: 1px solid red;
 }
 
 .marker-container {
     width: calc(3 * var(--cell-size));
-    /* max-width: calc(3 * var(--cell-size)); */
     aspect-ratio: 1;
     display: flex;
     align-items: center;
@@ -62,7 +52,6 @@ body {
 .marker {
     cursor: move;
     width: calc(2 * var(--cell-size));
-    /* max-width: calc(2 * var(--cell-size)); */
     aspect-ratio: 1;
     z-index: 1;
     box-shadow: 0 0 2px black;
@@ -108,19 +97,6 @@ body {
 .rgb {
     background-color: rgb(255, 255, 255);
 }
-
-/* @media (min-width: 1300px) {
-    body {
-        flex-direction: row;
-    }
-
-    #grid {
-    }
-
-    #palette {
-        flex-direction: column;
-    }
-} */
 
 /* vertical screen */
 @media (max-aspect-ratio: 1/1) {
