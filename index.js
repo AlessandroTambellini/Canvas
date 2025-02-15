@@ -69,11 +69,13 @@ function lay_marker(e)
 }
 
 document.addEventListener('mousemove', e => {
+    e.preventDefault(); // prevent scrolling
     move_marker(e);
-});
+}, { passive: false });
 document.addEventListener('touchmove', e => {
+    e.preventDefault(); // prevent scrolling
     move_marker(e);
-});
+}, { passive: false });
 
 function move_marker(e) {
     if (active_marker) 
