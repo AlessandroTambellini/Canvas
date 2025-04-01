@@ -72,6 +72,7 @@ document.addEventListener('mousemove', e => {
     e.preventDefault(); // prevent scrolling
     move_marker(e);
 }, { passive: false });
+// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#using_passive_listeners
 document.addEventListener('touchmove', e => {
     e.preventDefault(); // prevent scrolling
     move_marker(e);
