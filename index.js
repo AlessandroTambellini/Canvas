@@ -21,7 +21,7 @@ document.querySelectorAll('.marker').forEach(marker => {
     });
     marker.addEventListener('touchstart', e => {
         select_marker(e, marker)
-    });
+    }, { passive: true });
 });
 
 function select_marker(e, marker) 
