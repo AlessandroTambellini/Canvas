@@ -1,4 +1,4 @@
-const grid = document.querySelector('#grid');
+const canvas = document.querySelector('#canvas');
 
 /* cursor stands for both the mouse and the finger */
 let prev_cursor_x = 0;
@@ -7,10 +7,10 @@ let prev_cursor_y = 0;
 let active_marker = null;
 let active_marker_container = null;
 let active_marker_container_rect = null;
-let grid_rect = grid.getBoundingClientRect();
+let grid_rect = canvas.getBoundingClientRect();
 
 window.addEventListener('resize', () => {
-    grid_rect = grid.getBoundingClientRect();
+    grid_rect = canvas.getBoundingClientRect();
     /* I do not need to also re-calculate the active_marker_container_rect
     because, it is re-calculated every time the mousedown event fires on a marker. */
 });
@@ -121,13 +121,13 @@ function move_marker(e) {
             active_marker_container.classList.remove('marker-container-hover');
         }
 
-        /* active_marker on the grid */
+        /* active_marker on the canvas */
         if (active_marker_top + active_marker.offsetHeight > grid_rect.top &&
             active_marker_top < grid_rect.bottom &&
             active_marker_left + active_marker.offsetWidth > grid_rect.left &&
             active_marker_left < grid_rect.right
         ) {
-            const cell_size = grid.children[0].children[0].offsetWidth;
+            const cell_size = canvas.children[0].children[0].offsetWidth;
             
             const dist_from_left_border = active_marker_left - grid_rect.left;
             const dist_from_top_border = active_marker_top - grid_rect.top;
@@ -137,14 +137,14 @@ function move_marker(e) {
             const topmost_cell = Math.floor(dist_from_top_border / cell_size);
             const bottommost_cell = Math.floor((dist_from_top_border + active_marker.offsetHeight) / cell_size);
 
-            const grid_size = grid.children.length;
+            const grid_size = canvas.children.length;
             for (let i = topmost_cell; i <= bottommost_cell; i++) {
                 for (let j = leftmost_cell; j <= rightmost_cell; j++) {
                     if (i >= 0 && j >= 0 && i < grid_size && j < grid_size) {
                         if (active_marker.id === 'u') {
-                            grid.children[i].children[j].className = 'cell';
+                            canvas.children[i].children[j].className = 'cell';
                         } else {
-                            const child_class = grid.children[i].children[j].className;
+                            const child_class = canvas.children[i].children[j].className;
                             let color = child_class === 'cell' ? '---' : child_class.split(' ')[1];
                             if (!color.includes(active_marker.id)) {
                                 if (active_marker.id === 'r') color = 'r' + color[1] + color[2];
@@ -154,12 +154,12 @@ function move_marker(e) {
                                     console.error('unidentifiable active_marker.id:', active_marker.id);
                                     return;
                                 }
-                                grid.children[i].children[j].className = `cell ${color}`;
+                                canvas.children[i].children[j].className = `cell ${color}`;
                             }
                         }
                     }
                 }
             }
-        } // endif (active_marker on the grid)
+        } // endif (active_marker on the canvas)
     }
 }

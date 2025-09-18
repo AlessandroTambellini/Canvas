@@ -1,4 +1,4 @@
-![example](example.png)
+![example](example.webp)
 
 # Canvas
-Draw on a grid and mix elementary colors.  
+Draw on a canvas and mix elementary colors.  

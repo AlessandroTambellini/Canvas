@@ -1,12 +1,12 @@
 :root {
-    --grid-clr: rgb(52, 52, 56);
+    --canvas-clr: rgb(52, 52, 56);
     --cell-size: clamp(12px, min(3.25vw, 3.25vh), 40px); /* I put a limit to 40px
-    because, after a certain size of the grid, the border of the cells 
+    because, after a certain size of the canvas, the border of the cells 
     (that is actually a box shadow) is no more clearly distinguishable. */
 }
 
 body {
-    background-color: var(--grid-clr);
+    background-color: var(--canvas-clr);
     height: 100vh;
     margin: 0;
     display: flex;
@@ -15,8 +15,8 @@ body {
     overflow: hidden;
 }
 
-#grid {
-    background-color: var(--grid-clr);
+#canvas {
+    background-color: var(--canvas-clr);
     margin: calc(3 * var(--cell-size)); /* I put this margin
     because I want to give the user enough space to leave a marker on a side. */
 }
@@ -73,7 +73,7 @@ body {
     background-color: rgb(0, 0, 255);
 }
 #u {
-    background-color: var(--grid-clr);
+    background-color: var(--canvas-clr);
 }
 
 .r-- {
